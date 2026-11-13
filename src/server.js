@@ -131,6 +131,16 @@ app.use((error, req, res, next) => {
   });
 });
 
+// Homepage
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to PayNode — Powered by x402",
+    version: "1.0.0",
+    network: "Base Sepolia"
+  });
+});
+
 // 404
 app.use((req, res) => {
   res.status(404).json({
